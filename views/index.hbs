@@ -7,17 +7,17 @@
         <div class="card">
           <div class="card-image">
             <img src={{img}} />
-            <span class="card-title">{{name}}</span>
           </div>
-          <div class="card-content">
-            <p>{{price}}</p>
+          <div class="card-content card_content">
+            <span class="card-title">{{name}}</span>
+            <p class="card_price">{{price}}</p>
           </div>
           <div class="card-action">
             <form action="/products/add" method="post">
                 <input type="hidden" name="id" value="{{id}}" >
-                <button type="submit">Избранные</button>
+                <button type="submit">корзине</button>
             </form>
-            <a href="#">корзине</a>
+            <a href="#">Избранные</a>
           </div>
         </div>
       </div>

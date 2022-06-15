@@ -18,5 +18,9 @@ router.post('/add', async (req, res) => {
     res.redirect('/')
 })
 
+router.delete('/delete/:id', async (req, res) => {
+    const card = await Fav.removeById(req.params.id)
+    res.send(card)
+})
 
 module.exports = router

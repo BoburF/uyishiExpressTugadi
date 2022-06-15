@@ -1,7 +1,9 @@
 <div class="container">
-    <h2>{{card.price}}</h2>
+ 
+  <div id="cards">
+     <h2 class="total">{{card.price}}</h2>
     <div class="row">
-    {{#each card.favorit}}
+      {{#each card.favorit}}
       <div class="col s12 m3">
         <div class="card">
           <div class="card-image">
@@ -13,14 +15,12 @@
             <p>{{count}}</p>
           </div>
           <div class="card-action">
-            <form action="/products/add" method="post">
-                <input type="hidden" name="id" value="{{id}}" >
-                <button type="submit">Избранные</button>
-            </form>
-            <a href="#">корзине</a>
+            <button type="submit" class="btn">покупка</button>
+            <button id="{{id}}" data-id="{{id}}" class="btn remove-btn">Удалить</button>
           </div>
         </div>
       </div>
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 </div>

@@ -16,22 +16,24 @@ class Product {
         if (err) {
           reject(err);
         } else {
-          resolve(JSON.parse(content).product); 
+          resolve(JSON.parse(content).product);
         }
       });
     });
   }
 
-  static async findById(id){
+  static async findById(id) {
     const pro = await Product.getAll()
     return new Promise((resolve, reject) => {
-        const proId = pro.find(product => product.id === id)
-        if(!proId){
-           return reject('Book not found')
-        }
-        resolve(proId)
+      const proId = pro.find(product => product.id === id)
+      if (!proId) {
+        return reject('Book not found')
+      }
+      resolve(proId)
     })
   }
+
+  
 }
 
 module.exports = Product;

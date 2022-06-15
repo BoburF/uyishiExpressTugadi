@@ -8,6 +8,15 @@ h1{
     text-align: center;
 }
 
-.card-content{
-    background-color: #674354 !important;
+.card_content{
+    height: 208px;
+}
+
+.card-title{
+    height: 140px;
+}
+
+.card-action{
+    display: flex;
+    justify-content: space-between;
 }

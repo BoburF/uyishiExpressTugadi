@@ -35,6 +35,31 @@ class Fav{
             })
         })
     }
+
+    static async removeById(id) {
+        const card = await Fav.getFav()
+
+        const idx = card.favorit.findIndex(book => book.id === id)
+        console.log(idx);
+
+        card.price = card.price - +card.favorit[idx].price
+
+        if (card.favorit[idx].count === 1) {
+           
+            card.favorit = card.favorit.filter(book => book.id !== id)
+        } else {
+            
+            card.favorit[idx].count--
+        }
+
+        return new Promise((res, rej) => {
+            fs.writeFile(dir, JSON.stringify(card), (err) => {
+                if (err) rej(err)
+                else res(card)
+            })
+        })
+
+    }
 }
 
 module.exports = Fav
