@@ -1,6 +1,7 @@
 <div class="container">
  
   <div id="cards">
+     {{#if card.favorit.length}}
      <h2 class="total">{{card.price}}</h2>
     <div class="row">
       {{#each card.favorit}}
@@ -8,19 +9,25 @@
         <div class="card">
           <div class="card-image">
             <img src={{img}} />
-            <span class="card-title">{{name}}</span>
           </div>
           <div class="card-content">
-            <p>{{price}}</p>
+            <span class="card-title">{{name}}</span>
+            <p class="card_price">{{price}}</p>
             <p>{{count}}</p>
           </div>
           <div class="card-action">
-            <button type="submit" class="btn">покупка</button>
+            <form action="/products/delivery/{{id}}" method="post">
+            <input type="hidden" name="id" value="{{id}}" >
+                <button type="submit" class="btn_dl btn">Delivery</button>
+            </form>
             <button id="{{id}}" data-id="{{id}}" class="btn remove-btn">Удалить</button>
           </div>
         </div>
       </div>
       {{/each}}
     </div>
+    {{else}}
+    <h2>Card is empty</h2>
+    {{/if}}
   </div>
 </div>

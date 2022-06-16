@@ -2,7 +2,7 @@
   <h1>Shaftoli.uz ga Xush kelibsiz</h1>
 
   <div class="row">
-    {{#each card}}
+    {{#each pro}}
       <div class="col s12 m3">
         <div class="card">
           <div class="card-image">
@@ -10,14 +10,15 @@
           </div>
           <div class="card-content card_content">
             <span class="card-title">{{name}}</span>
-            <p class="card_price">{{price}}</p>
+            <p><span class="card_price">{{price}}</span></p>
           </div>
           <div class="card-action">
-            <form action="/products/add" method="post">
+            <div class="card_action">
+              <form action="/products/add" method="post">
                 <input type="hidden" name="id" value="{{id}}" >
-                <button type="submit">корзине</button>
+                <button type="submit" class="btn_sub">корзине</button>
             </form>
-            <a href="#">Избранные</a>
+            </div> 
           </div>
         </div>
       </div>

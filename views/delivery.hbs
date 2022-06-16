@@ -1,0 +1,20 @@
+<div class="container">
+    <table>
+    <tr>
+        <th>name</th>
+        <th>price</th>
+        <th>count</th>
+        <th>time</th>
+        <th>delivery time</th>
+    </tr>
+    {{#each cards}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{count}}</td>
+            <td class="date">{{time}}</td>
+            <td class="time">until 1 day</td>
+        </tr>
+    {{/each}}
+</table>
+</div>

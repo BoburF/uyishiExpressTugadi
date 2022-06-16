@@ -1,1 +1,13 @@
-{"favorit":[],"price":0}
+{
+  "favorit": [
+    {
+      "name": "Xiaomi Redmi 10C 4/128 GB Graphite Gray",
+      "price": 25760,
+      "img": "https://olcha.uz/image/425x425/products/AXAaVuwPOqjzawJHWTLXVxhnZ3HZrfvIKGUlJRhmJoAb89Gd18o1nCePgYa4.",
+      "id": "6",
+      "count": 1
+    }
+  ],
+  "price": 51520,
+  "count": 2
+}

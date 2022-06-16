@@ -17,6 +17,7 @@ class Fav{
         }
 
         fav.price = fav.price + +pro.price
+        fav.count += 1
 
         return new Promise((res, rej) => {
             fs.writeFile(dir, JSON.stringify(fav), (err) => {
@@ -52,6 +53,8 @@ class Fav{
             card.favorit[idx].count--
         }
 
+        card.count = card.count - 1
+
         return new Promise((res, rej) => {
             fs.writeFile(dir, JSON.stringify(card), (err) => {
                 if (err) rej(err)
@@ -60,6 +63,17 @@ class Fav{
         })
 
     }
+
+    static async findById(id) {
+        const pro = await Fav.getFav()
+        return new Promise((resolve, reject) => {
+          const proId = pro.favorit.find(product => product.id === id)
+          if (!proId) {
+            return reject('Book not found')
+          }
+          resolve(proId)
+        })
+      }
 }
 
 module.exports = Fav

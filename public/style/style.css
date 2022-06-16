@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+body{
+    height: 100vh;  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav{
+    background: red;
+}
+
+.page-footer{
+    background: red;
+}
+
 h1{
     text-align: center;
 }
@@ -13,10 +28,50 @@ h1{
 }
 
 .card-title{
-    height: 140px;
+    height: 120px;
 }
-
+.card_action{
+    width: 100%;
+    display: flex;
+    justify-content: center;    
+}
 .card-action{
     display: flex;
     justify-content: space-between;
+}
+
+.btn_sub{
+    background: red;
+    color: #fff;
+    border: none;
+    padding: 8px 60px;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px #000;
+    transition: all .3s;
+}
+
+.btn_sub:hover{
+    box-shadow: none;
+}
+
+.nav_card{
+    position: relative;
+}
+
+.count_fav{
+    position: absolute;
+    top: 12px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+table, tr, td, th{
+    border: 1px solid #000;
 }

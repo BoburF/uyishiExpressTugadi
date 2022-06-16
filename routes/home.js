@@ -1,15 +1,19 @@
-const express = require('express')
-const router = express.Router()
-const Product = require('../module/Product')
+const express = require("express");
+const router = express.Router();
+const Product = require("../module/Product");
+const Fav = require("../module/Favorites");
 
+router.get("/", async (req, res) => {
+  const product = await Product.getAll();
+  const favs = await Fav.getFav();
+  const data = new Date();
 
-router.get('/', async (req, res) => {
-    const product = await Product.getAll()
+  console.log(data.toDateString());
+  res.render("index", {
+    title: "Olcha",
+    pro: product,
+    card: favs,
+  });
+});
 
-    res.render('index', {
-        title: 'Olcha',
-        card: product
-    })
-})  
-
-module.exports = router
+module.exports = router;
